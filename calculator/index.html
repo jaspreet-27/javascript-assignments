@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                         onkeydown="myFunction(event)"> </td> 
             <td><input type="button" value="9" onclick="dis('9')"
                         onkeydown="myFunction(event)"> </td> 
-            <td rowspan="4"><input type="button"  class="btn" value="=" onclick="dis('=')"
+            <td rowspan="4"><input type="button"  class="btn" value="=" onclick="solve()"
                         onkeydown="myFunction(event)"> </td> 
         </tr> 
         <tr> 
@@ -51,7 +51,7 @@
                         onkeydown="myFunction(event)"> </td> 
             <td><input type="button" value="2" onclick="dis('2')"
                         onkeydown="myFunction(event)"> </td> 
-            <td><input type="button" value="3" onclick="solve(3)"> </td> 
+            <td><input type="button" value="3" onclick="dis('3')"> </td> 
   
             <!-- <td rowspan="3"><input type="button" value="" onclick="dis('+')"
                         onkeydown="myFunction(event)"> </td>  -->
@@ -61,13 +61,13 @@
                         onkeydown="myFunction(event)"> </td> 
             <td><input type="button" value="." onclick="dis('.')"
                         onkeydown="myFunction(event)"> </td> 
-            <td><input type="button" value="c" onclick="dis('c')"
+            <td><input type="button" value="c" onclick="clr()"
                         onkeydown="myFunction(event)"> </td> 
             <!-- <td rowspan="3"><input type="button" value="" onclick="dis('')"
                         onkeydown="myFunction(event)"> </td>  -->
         </tr> 
     </table> 
-    <script src="js/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
