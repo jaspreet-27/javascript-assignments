@@ -1,0 +1,23 @@
+
+.form-sec {
+    text-align: center;
+    width: 253px;
+    height: 200px;
+    margin: auto;
+}
+
+
+.form-cls {
+    /* display: flex; */
+    padding: 10px 0px;
+}
+label{
+    width: 500px
+}
+.err_msg{
+    border: 1px solid red;
+    display: none;
+}
+button.btn {
+    margin: 12px 113px;
+}
