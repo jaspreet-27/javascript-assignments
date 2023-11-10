@@ -22,7 +22,7 @@
             console.log(x); 
             solve(); 
         } 
-    } 
+    }                                          
 
     function solve() { 
         let x = document.getElementById("result").value 
