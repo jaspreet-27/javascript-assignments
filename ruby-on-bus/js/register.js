@@ -24,9 +24,9 @@ const handleFormData = (e) => {
     const phInput = document.getElementById("ph_input");
 
     
-    const firstname = firstnameInput.value.trim();
-    const lastname = lastnameInput.value.trim();
-    const email = emailInput.value.trim();
+    const firstname = firstnameInput.value
+    const lastname = lastnameInput.value
+    const email = emailInput.value
     const password = passwordInput.value.trim();
     const confirmpassword = confirmPasswordInput.value.trim();
     const ph = phInput.value.trim();
@@ -34,6 +34,10 @@ const handleFormData = (e) => {
     const gender2 = genderInput2.value.trim();
   
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const  nameRegex = /^[a-zA-Z]+$/;
+    const rule = /^[a-zA-Z0-9_]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const phoneRegex = /^\d{10}$/;
 
     document.querySelectorAll(".input-box .error").forEach(field => field.classList.remove("error"));
     document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
@@ -41,19 +45,39 @@ const handleFormData = (e) => {
     if (firstname === "") {
         showError(firstnameInput, "Enter your first name");
     }
-    
-
+    if(!nameRegex.test(firstname)){
+        showError(firstnameInput, " Invalid name");
     }
+    if(firstname.charAt(0) === ' '){
+        showError(firstnameInput,"space is not allowed")
+    }
+    
     if (lastname === "") {
         showError(lastnameInput, "Enter your last name");
     }
+    if(!nameRegex.test(lastname)){
+        showError(lastnameInput, " Invalid name");
+    }
+    if(lastname.charAt(0) === ' '){
+        showError(lastnameInput,"space is not allowed")
+    }
+
     if (!emailPattern.test(email)) {
         showError(emailInput, "Enter a valid email address");
     }
+    if(email.charAt(0) === ' '){
+        showError(emailInput,"space is not allowed")
+    }
+    // if(!rule.test(email)){
+    //     showError(emailInput,'spacial character not allowed');
+    // }
 
 
     if (password === "") {
         showError(passwordInput, "Enter your password");
+    }
+    if(passwordRegex.test(password)){
+        showError(passwordInput,"Invalid password");
     }
     if (confirmpassword === "") {
         showError(confirmPasswordInput, "Enter confirm password");
@@ -65,9 +89,14 @@ const handleFormData = (e) => {
     if (ph === "") {
         showError(phInput, "Enter phone number password");
     }
+    if(!phoneRegex.test(ph)){
+        showError(phInput,"Invalid phone number");
+    }
+    if(ph.charAt(0) === ' '){
+        showError(phInput,"space is not allowed")
+    }
 
-     
-    
+
     
     if (gender1 === "" && gender2 === "" ) {
         showError(genderInput1, "Select your gender");
@@ -78,6 +107,7 @@ const handleFormData = (e) => {
    let user = { "fname":firstnameInput  ,"lname":lastnameInput, "email":emailInput , "password" : passwordInput, "phone":phInput}
    localStorage.setItem(user.email, JSON.stringify(user));
     form.submit();
+}
 
 // Handling form submission event
 form.addEventListener("submit", handleFormData);

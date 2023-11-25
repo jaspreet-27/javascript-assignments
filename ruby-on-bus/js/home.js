@@ -14,5 +14,5 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
   
     const confirmationMessage = `Your bus from ${from} to ${to} on ${date} has been booked successfully!`;
     document.getElementById('reservationDetails').innerText = confirmationMessage;
-    window.location.href = "../listbus.html";
+    window.location.href = "./listbus.html";
   });
