@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Bus Reservation</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/home.css">
 </head>
@@ -24,15 +24,18 @@
   <!-- nav -->
   <div class="container">
     <h1>Bus Reservation</h1>
-    <form id="bookingForm">
+    <form  action="./listbus.html"  id="bookingForm">
       <div class="form-group">
         <label for="from">From:</label>
         <!-- <input type="text" class="form-control" id="from" name="from" required> -->
         <select class="form-control" id="from" name="from" required>
           <option value=""></option>
-          <option value="CityA">City A</option>
-          <option value="CityB">City B</option>
-          <option value="CityC">City C</option>
+          <option value="CityA">Delhi</option>
+          <option value="CityB">Mohali</option>
+          <option value="CityC">Shimla</option>
+          <option value="CityA">Chandigarh</option>
+          <option value="CityB">Amritsar</option>
+          <option value="CityC">Himachal Pradesh</option>
           <!-- Add more options as needed -->
         </select>
 
@@ -41,11 +44,13 @@
       <div class="form-group">
         <label for="to">To:</label>
         <!-- <input type="text" class="form-control" id="to" name="to" required> -->
-        <select class="form-control" id="from" name="from" required>
-          <option value=""></option>
-          <option value="CityA">City A</option>
-          <option value="CityB">City B</option>
-          <option value="CityC">City C</option>
+        <select class="form-control" id="to" name="from" required>
+          <option value="CityA">Delhi</option>
+          <option value="CityB">Mohali</option>
+          <option value="CityC">Shimla</option>
+          <option value="CityA">Chandigarh</option>
+          <option value="CityB">Amritsar</option>
+          <option value="CityC">Himachal Pradesh</option>
           <!-- Add more options as needed -->
         </select>
       </div>
