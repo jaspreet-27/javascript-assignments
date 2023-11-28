@@ -24,7 +24,7 @@
   <!-- nav -->
   <div class="container">
     <h1>Bus Reservation</h1>
-    <form  action="./listbus.html"  id="bookingForm">
+    <form action="./booking.html" id="bookingForm">
       <div class="form-group">
         <label for="from">From:</label>
         <!-- <input type="text" class="form-control" id="from" name="from" required> -->
@@ -45,7 +45,7 @@
         <label for="to">To:</label>
         <!-- <input type="text" class="form-control" id="to" name="to" required> -->
         <select class="form-control" id="to" name="from" required>
-          <option value="CityA">Delhi</option>
+          <option value="CityA"></option>
           <option value="CityB">Mohali</option>
           <option value="CityC">Shimla</option>
           <option value="CityA">Chandigarh</option>
@@ -60,10 +60,20 @@
         <input type="date" class="form-control" id="date" name="date" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Book Now</button>
+      <button type="submit" class="btn btn-primary" onclick="searchbuses()">Book Now</button>
     </form>
     <p id="reservationDetails"></p>
   </div>
+  <section>
+    <div class="container">
+      <div class="col sm-12">
+        <div class="available-bus">
+          <h3>check the bus availablity</h3>
+          <div id="buslist"></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->

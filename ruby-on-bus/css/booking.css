@@ -22,7 +22,7 @@ body {
   background-color: rgba(255, 255, 255, 0.427);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(205, 161, 161, 0.1);
 
   
 }
@@ -36,9 +36,9 @@ body {
 .seat {
   width: 40px;
   height: 40px;
-  background-color:black;
+  background: gray;
  color: #fff;
-  border-radius: 5px;
+  border-radius: 21px;
   cursor: pointer;
 }
 
@@ -74,5 +74,9 @@ button {
   border-radius: 10px;
 }
 .booking-click:hover{
-  background-color: rgba(0, 128, 0, 0.655);
+  background-color: rgba(238, 69, 69, 0.655);
+}
+.btn-warning{
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  color: whitesmoke;
 }

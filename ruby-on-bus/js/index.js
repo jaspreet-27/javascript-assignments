@@ -14,46 +14,62 @@ const showError = (field, errorText) => {
 
 const handleFormData = (e) => {
     e.preventDefault();
- 
+
     const emailInput = document.getElementById("email_input");
-  
+
     const email = emailInput.value;
     const password = passwordInput.value.trim();
 
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    // const rule = /^[a-zA-Z0-9_]+$/;
-    // const add = /^[a-zA-Z0-9#$%^&*()_+{}\[\]:;<>,.?~\\/ -]+$/;
+
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     // const numRegex = [A-Za-z\d@$!%*?&]{8,}$/;
 
     document.querySelectorAll(".field .error").forEach(field => field.classList.remove("error"));
     document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
-  
+
     if (!emailPattern.test(email)) {
         showError(emailInput, "Enter a valid email address");
     }
-    if(email.charAt(0) === ' '){
-        showError(emailInput,"space is not allowed")
+    if (email.charAt(0) === ' ') {
+        showError(emailInput, "space is not allowed")
     }
-    // if(add.test(email)){
-    //     showError(emailInput,'spacial character not allowed');
-    // }
 
     if (password === "") {
         showError(passwordInput, "Enter your password");
     }
-    if(passwordRegex.test(password)){
-        showError(passwordInput,"Invalid password");
+    if (passwordRegex.test(password)) {
+        showError(passwordInput, "Invalid password");
     }
 
-   
+
     const errorInputs = document.querySelectorAll(".field .error");
     if (errorInputs.length > 0) return;
-    
-    form.submit();
+
+    let user = localStorage.getItem(email)
+
+    if (user) {
+        user = JSON.parse(user);
+        if (user.password === password) {
+            form.submit();
+        }
+        else {
+            // alert passwroon not match
+            alert("password invalid")
+        }
+    }
+    else {
+        // user invalid
+        alert("user not exist!!!!")
+    }
+
+
 }
 
 form.addEventListener("submit", handleFormData);
+
+
+
 
 
 
