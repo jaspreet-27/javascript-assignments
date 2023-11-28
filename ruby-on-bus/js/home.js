@@ -29,17 +29,17 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
   function getBusData(from, to) {
     const buses = [
       {from: 'Chandigarh', to: 'Delhi', time: '10;00 AM', price: '250'},
-      {from: 'delhi', to: 'Himachal', time: '10;00 pM', price: '300'},
-      {from: 'Chandigarh', to: 'himachal pradesh', time: '12;00 pM', price: '300'},
-      {from: 'manali', to: 'Delhi', time: '02;00 AM', price: '300'},
-      {from: 'Chandigarh', to: 'Delhi', time: '09;00 pM', price: '250'},
-      {from: 'Assam', to: 'Himachal', time: '08;00 AM', price: '250'},
-      {from: 'Delhi', to: 'chandihagh', time: '04;00 pM', price: '400'},
-      {from: 'Chandigarh', to: 'Uttrakhand', time: '06;00 AM', price: '250'},
-      {from: 'Assam', to: 'Himachal', time: '01;00 pM', price: '340'},
-      {from: 'Assam', to: 'Uttrakhand', time: '12;00 AM', price: '250'},
-      {from: 'Chandigarh', to: 'Uttrakhand', time: '11;00 pM', price: '400'},
-      {from: 'Assam', to: 'Delhi', time: '01;00 pM', price: '300'}
+      {from: 'Delhi', to: 'Himachal Pradesh', time: '10;00 pM', price: '300'},
+      {from: 'Chandigarh', to: 'Shimla', time: '12;00 pM', price: '300'},
+      {from: 'Himachal Pradesh', to: 'Delhi', time: '02;00 AM', price: '300'},
+      {from: 'Chandigarh', to: 'Amritsar', time: '09;00 pM', price: '250'},
+      {from: 'Himachal Pradesh', to: 'Delhi', time: '08;00 AM', price: '250'},
+      {from: 'Delhi', to: 'Amritsar', time: '04;00 pM', price: '400'},
+      {from: 'Chandigarh', to: 'Shimla', time: '06;00 AM', price: '250'},
+      {from: 'Himachal Pradesh', to: 'Shimla', time: '01;00 pM', price: '340'},
+      {from: 'Shimla', to: 'Himachal Pradesh', time: '12;00 AM', price: '250'},
+      {from: 'Chandigarh', to: 'Amritsar', time: '11;00 pM', price: '400'},
+      {from: 'Amritsar', to: 'Delhi', time: '01;00 pM', price: '300'}
     ]
   
     const filteredBuses = buses.filter((bus) => bus.from == from && bus.to == to)
@@ -71,4 +71,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     })
             
     busListDiv.appendChild(ul)
+  }
+  function booknow(){
+    window.location.href = "./booking.html"
   }
